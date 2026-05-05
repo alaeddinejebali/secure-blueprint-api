@@ -1,7 +1,7 @@
-# secure-blueprint-api
+# Secure Blueprint API
 Secure Node.js/Express API built to manage devices, services, and security findings in my cybersecurity homelab. Demonstrates clean API development and security best practices.
 
-# 🚨 VULNERABLE Homelab API - Educational Version
+# 🚨 VULNERABLE Homelab API
 
 > **⚠️ WARNING: This version is INTENTIONALLY insecure.**  
 > It contains multiple security vulnerabilities for learning and demonstration purposes only.  
@@ -13,9 +13,9 @@ This branch demonstrates common security mistakes in Node.js/Express APIs so the
 
 ### Purpose of This Branch
 
-- Showcase real-world vulnerabilities
-- Help me (and recruiters) understand the difference between secure and insecure code
-- Serve as a teaching tool for cybersecurity awareness
+- Showcase real-world vulnerabilities.
+- Understand the difference between secure and insecure code.
+- Serve as a teaching tool for cybersecurity awareness.
 
 ---
 
