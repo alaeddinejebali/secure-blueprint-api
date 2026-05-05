@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    depends_on:
+      mongo:
+        # SECURITY: Wait until MongoDB is genuinely ready to accept connections
+        # before starting the API, preventing silent connection failures.
+        condition: service_healthy
+
+  mongo:
+    image: mongo:7
+    # SECURITY: Do not expose MongoDB port to the host in production.
+    # Exposed here for local development/inspection only.
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  mongodb_data:
